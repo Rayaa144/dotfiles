@@ -2,7 +2,7 @@ make dirs:
 	mkdir -p $HOME/.config/{alacritty,bspwm,dunst,fastfetch,fish,scripts,sxhkd}
 
 make pkg:
-	pacman -S bspwm sxhkd alacritty dmenu dunst fastfetch fish picom nitrogen xorg-xsetroot lxsession
+	pacman -S bspwm sxhkd alacritty dmenu dunst fastfetch fish picom nitrogen xorg-xsetroot lxsession scrot
 
 make update:
 	chmod +x ./mouse-acc.sh
