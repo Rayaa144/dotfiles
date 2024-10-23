@@ -1,19 +1,28 @@
-make dirs:
-	mkdir -p $HOME/.config/{alacritty,bspwm,dunst,fastfetch,fish,scripts,sxhkd}
+# Create necessary directories
+dirs:
+	mkdir -p $(HOME)/.config/alacritty \
+		$(HOME)/.config/bspwm \
+		$(HOME)/.config/dunst \
+		$(HOME)/.config/fastfetch \
+		$(HOME)/.config/fish \
+		$(HOME)/.config/scripts \
+		$(HOME)/.config/sxhkd
 
-make pkg:
-	pacman -S bspwm sxhkd alacritty dmenu dunst fastfetch fish picom nitrogen xorg-xsetroot lxsession scrot
+# Install packages
+pkg:
+	sudo pacman -S bspwm sxhkd alacritty dmenu dunst fastfetch fish picom nitrogen xorg-xsetroot lxsession scrot
 
-make update:
+# Update configuration and create symlinks
+update:
 	chmod +x ./mouse-acc.sh
-	ln -s ./alacritty.toml  $HOME/.config/alacritty/alacritty.toml
-	ln -s ./bspwmrc  $HOME/.config/bspwm/bspwmrc
-	ln -s ./arch $HOME/.config/fastfetch/arch
-	ln -s ./config.jsonc $HOME/.config/config.jsonc
-	ln -s ./dunstrc  $HOME/.config/dunst/dunstrc
-	ln -sf ./sxkdrc $HOME/.config/sxhkd/sxhkdrc
-	cp -r./nvim $HOME/.config/
-	cp -r./config.fish $HOME/.config/fish/
-	ln -s ./picom.conf $HOME/.config/scripts/picom.conf 
-	ln -s ./mouse-acc.sh $HOME/.config/scripts/mouse-acc.sh
-                           
+	ln -sf $(PWD)/alacritty.toml $(HOME)/.config/alacritty/alacritty.toml
+	ln -sf $(PWD)/bspwmrc $(HOME)/.config/bspwm/bspwmrc
+	ln -sf $(PWD)/arch $(HOME)/.config/fastfetch/arch
+	ln -sf $(PWD)/config.jsonc $(HOME)/.config/config.jsonc
+	ln -sf $(PWD)/dunstrc $(HOME)/.config/dunst/dunstrc
+	ln -sf $(PWD)/sxkdrc $(HOME)/.config/sxhkd/sxhkdrc
+	cp -r $(PWD)/nvim $(HOME)/.config/
+	cp -r $(PWD)/config.fish $(HOME)/.config/fish/
+	ln -sf $(PWD)/picom.conf $(HOME)/.config/scripts/picom.conf
+	ln -sf $(PWD)/mouse-acc.sh $(HOME)/.config/scripts/mouse-acc.sh
+
