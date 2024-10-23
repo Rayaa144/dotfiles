@@ -2,7 +2,7 @@
 
 xsetroot -cursor_name left_ptr
 nitrogen --restore
-picom --config /home/paul/.config/scripts/picom.conf &
+picom --config $HOME/.config/scripts/picom.conf &
 dunst &
 
 #og stuff
