@@ -61,6 +61,9 @@ super + x
 super + i
 	firefox --new-tab /home/paul/.local/share/Routine-CSE,ODD\ 24-25\ -\ updated.pdf 
 #browser-specific
+alt + space; {d,c}
+	firefox --new-tab {"https://app.daily.dev/","https://claude.ai/new"}
+
 alt + w
 	firefox --new-tab "https://web.whatsapp.com/"
 alt + y

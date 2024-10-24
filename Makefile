@@ -25,4 +25,5 @@ update:
 	cp -r $(PWD)/config.fish $(HOME)/.config/fish/
 	ln -sf $(PWD)/picom.conf $(HOME)/.config/scripts/picom.conf
 	ln -sf $(PWD)/mouse-acc.sh $(HOME)/.config/scripts/mouse-acc.sh
+	ln -sf $(PWD)/brigtness.sh $(HOME)/.config/scripts/brigtness.sh
 
