@@ -7,6 +7,8 @@
 
 #
 # wm independent hotkeys
+super + ctrl + c
+	nitrogen --random --set-zoom-fill
 #
 
 # Power
@@ -18,8 +20,6 @@ ctrl + alt + Left
 	sleep 1 && xset dpms force off	
 super + z
 	notify-send $(date +%T)
-super + ctrl + c 
-	nitrogen --random --set-zoom-fill
 
 # terminal emulator
 super + Return
@@ -60,9 +60,14 @@ super + x
 
 super + i
 	firefox --new-tab /home/paul/.local/share/Routine-CSE,ODD\ 24-25\ -\ updated.pdf 
+
+#picom -shit
+control + End
+	~/.config/scripts/pkill-picom.sh
+
 #browser-specific
-alt + space; {d,c,g}
-	firefox --new-tab {"https://app.daily.dev/","https://claude.ai/new","https://github.com/Rayaa144"}
+alt + space; {d,c,g,l}
+	firefox --new-tab {"https://app.daily.dev/","https://claude.ai/new","https://github.com/Rayaa144","https://chatgpt.com"}
 
 alt + w
 	firefox --new-tab "https://web.whatsapp.com/"
@@ -78,8 +83,6 @@ alt + m
 	firefox --new-tab "https://open.spotify.com/"
 alt + d
 	firefox --new-tab "https://discord.com/channels/@me"
-alt + g
-	firefox --new-tab "https://www.googlecloudcommunity.com/gc/Google-Cloud/ct-p/google-cloud"
 alt + u
 	firefox --new-tab "https://makaut1.ucanapply.com/smartexam/public/"
 alt + c
@@ -104,8 +107,6 @@ alt + shift + m
 	chromium --new-tab "https://open.spotify.com/"
 alt + shift + d
 	chromium --new-tab "https://discord.com/channels/@me"
-alt + shift + g
-	chromium --new-tab "https://www.googlecloudcommunity.com/gc/Google-Cloud/ct-p/google-cloud"
 alt + shift + u
 	chromium --new-tab "https://makaut1.ucanapply.com/smartexam/public/"
 alt + shift + c
@@ -125,6 +126,10 @@ super + @Print
 #brigtness control
 XF86MonBrightness{Up,Down}
 	brightnessctl s 10{+,-}; ~/.config/scripts/brightness.sh   
+super + {Prior,Next}
+	brightnessctl s 10{+,-}; ~/.config/scripts/brightness.sh   
+	
+
 #audio control
 XF86Audio{Raise,Lower}Volume  
 	pulsemixer --change-volume {+,-}5  

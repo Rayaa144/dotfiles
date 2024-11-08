@@ -26,4 +26,5 @@ update:
 	ln -sf $(PWD)/picom.conf $(HOME)/.config/scripts/picom.conf
 	ln -sf $(PWD)/mouse-acc.sh $(HOME)/.config/scripts/mouse-acc.sh
 	ln -sf $(PWD)/brigtness.sh $(HOME)/.config/scripts/brigtness.sh
+	ln -sf $(PWD)/pkill-picom.sh $(HOME)/.config/scripts/pkill-picom.sh
 
