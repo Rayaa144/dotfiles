@@ -32,6 +32,8 @@ super + y
 #kdeconnectd shortcuts
 super + Up
 	kdeconnect-cli -d $(kdeconnect-cli -a --id-only) --send-clipboard
+super + Home
+	pkill kdeconnectd ; kdeconnectd
 
 #asusctl shortcuts
 alt + F4
@@ -43,11 +45,13 @@ super + q
 
 #apps
 super + b
-	env GDK_DPI_SCALE=0.85 firefox
+	env GDK_DPI_SCALE=0.75 firefox
 super + shift + b
 	chromium
 super + o
 	prime-run $HOME/Games/osu.AppImage & bspc desktop -f ^5
+super + End
+	prime-run java -jar $HOME/Games/TLauncher.jar & bspc desktop -f ^5
 super + shift + e
 	bspc rule -a Thunar state=floating & thunar 
 super + e
@@ -58,8 +62,11 @@ super + d
 super + x
 	cpupower-gui
 
+super + n
+	miru	
+
 super + i
-	firefox --new-tab /home/paul/.local/share/Routine-CSE,ODD\ 24-25\ -\ updated.pdf 
+	firefox --new-tab /home/paul/.local/share/routine.pdf 
 
 #picom -shit
 control + End
